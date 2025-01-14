@@ -1,0 +1,8 @@
+// downloading mysql
+docker pull mysql:8.0.26
+docker run -d --name mysql-container -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=car -e MYSQL_PASSWORD=root mysql:8.0.26
+
+// create database
+docker exec -it mysql-container bash
+mysql -u root -p
+create database car;
