@@ -15,7 +15,7 @@ class CarHttpConfiguration(
 ) {
 
     private companion object {
-        const val BASE_URL = "http://ec2-18-215-156-13.compute-1.amazonaws.com:8080"
+        const val BASE_URL = "http://localhost:8090"
     }
 
     private fun buildClient() = OkHttpClient.Builder().build()

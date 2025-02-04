@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service
 @Service
 internal class CarService(
     private val carRepository: CarRepository,
-    private val carHttpService: CarHttpService
+    private val carHttpService: CarHttpService,
 ) : CarService {
 
     @Cacheable(cacheNames = ["Cars"], key = "#root.method.name")
@@ -33,9 +33,18 @@ internal class CarService(
         return carRepository.findById(id) ?: throw RuntimeException()
     }
 
-    override suspend fun listByNinjaAPI(model: String): List<Car>? = coroutineScope {
-        carHttpService
-            .getByModel(model)
-            .let(CarHttpToModelConverter::toModel)
-    }
+//    override suspend fun listByNinjaAPI(model: String): List<Car>? = coroutineScope {
+//        carHttpService
+//            .getByModel(model)
+//            .let(CarHttpToModelConverter::toModel)
+//    }
+
+    override fun listByInventory(model: String) =
+        carHttpService.getByModel(model)
+            .execute()
+            .body()
+            ?.let(CarHttpToModelConverter::toModel)
+
+
+
 }
