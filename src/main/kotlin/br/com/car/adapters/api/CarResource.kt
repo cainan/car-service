@@ -2,6 +2,7 @@ package br.com.car.adapters.api
 
 import br.com.car.domain.model.Car
 import br.com.car.domain.ports.CarService
+import kotlinx.coroutines.runBlocking
 import org.springframework.web.bind.annotation.*
 
 @RestController
@@ -26,7 +27,9 @@ class CarResource(
 //    }
 
     @GetMapping("/list-model")
-    fun listByInventory(@RequestParam model: String) =
+    fun listByInventory(@RequestParam model: String) = runBlocking {
         carService.listByInventory(model)
+    }
+
 
 }

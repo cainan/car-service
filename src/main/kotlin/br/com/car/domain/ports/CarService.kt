@@ -9,5 +9,5 @@ interface CarService {
     fun update(car: Car, id: Long): Int
     fun findById(id: Long): Car
 //    suspend fun listByNinjaAPI(model: String): List<Car>?
-    fun listByInventory(model : String) : List<Car>?
+    suspend fun listByInventory(model : String) : List<Car>?
 }
