@@ -12,15 +12,15 @@ class CircuitBreakerConfiguration {
         CircuitBreakerConfig
             .custom()
             .slidingWindowType(CircuitBreakerConfig.SlidingWindowType.COUNT_BASED)
-            .slidingWindowSize(10)
+            .slidingWindowSize(5)
             .slowCallRateThreshold(70.0f)
-            .slowCallDurationThreshold(Duration.ofSeconds(2))
-            .waitDurationInOpenState(Duration.ofSeconds(5000))
-            .permittedNumberOfCallsInHalfOpenState(10)
-            .writableStackTraceEnabled(false)
+            .failureRateThreshold(70.0f)
+            .waitDurationInOpenState(Duration.ofSeconds(5))
+            .slowCallDurationThreshold(Duration.ofSeconds(3))
+            .permittedNumberOfCallsInHalfOpenState(3)
             .build()
 
     fun getCircuitBreaker() =
         CircuitBreakerRegistry.of(getConfiguration())
-            .circuitBreaker("CIRCUIT-BREAKER")
+            .circuitBreaker("circuit-breaker-car-service")
 }
