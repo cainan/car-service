@@ -12,3 +12,17 @@ docker login
 docker image build -t car-service:v1 .     // -t is to tag    . root of the project
 docker tag sha256:454749d562f7def97d0e172430e94ee5b9291f85b09e1198d29ac755cf205609 cainanpro/car-service:v1
 docker push cainanpro/car-service:v1
+
+
+// K3D
+k3d cluster create --port 8080:80@loadbalancer
+
+
+// Kubernets
+kubectl get pods
+cd .\src\main\kotlin\br\com\car\k8s\
+kubectl apply -f .\mysql\
+kubectl apply -f .\redis\
+kubectl apply -f .\app\
+kubectl apply -f .\ingress\
+kubectl logs car-service-app-57c5d45599-8km9c

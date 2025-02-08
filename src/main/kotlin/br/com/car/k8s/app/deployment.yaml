@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: car-service
-          image: joao0212/car-service:v2
+          image: cainanpro/car-service:v2
           ports:
             - containerPort: 8080
           env:

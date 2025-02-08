@@ -13,6 +13,7 @@ This project aims to explore and learn about the Kotlin language, exploring its 
 - Database using MySql
 - Cache using redis
 - Docker 
+- Kubernets
 
 
 based on Kotlin Formation course at @Alura:
