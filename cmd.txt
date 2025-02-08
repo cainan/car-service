@@ -6,3 +6,9 @@ docker run -d --name mysql-container -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -e
 docker exec -it mysql-container bash
 mysql -u root -p
 create database car;
+
+// create image of the application
+docker login
+docker image build -t car-service:v1 .     // -t is to tag    . root of the project
+docker tag sha256:454749d562f7def97d0e172430e94ee5b9291f85b09e1198d29ac755cf205609 cainanpro/car-service:v1
+docker push cainanpro/car-service:v1

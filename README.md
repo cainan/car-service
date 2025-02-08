@@ -12,7 +12,9 @@ This project aims to explore and learn about the Kotlin language, exploring its 
 - Coroutines
 - Database using MySql
 - Cache using redis
+- Docker 
 
 
 based on Kotlin Formation course at @Alura:
 https://cursos.alura.com.br/course/kotlin-aplicacoes-resilientes-assincronas/
+https://cursos.alura.com.br/course/kotlin-preparando-aplicacao-cloud
