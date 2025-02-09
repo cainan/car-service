@@ -26,3 +26,6 @@ kubectl apply -f .\redis\
 kubectl apply -f .\app\
 kubectl apply -f .\ingress\
 kubectl logs car-service-app-57c5d45599-8km9c
+
+kubectl get ingress
+kubectl get all

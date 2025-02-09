@@ -14,6 +14,7 @@ This project aims to explore and learn about the Kotlin language, exploring its 
 - Cache using redis
 - Docker 
 - Kubernets
+- K3S
 
 
 based on Kotlin Formation course at @Alura:
