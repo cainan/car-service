@@ -15,6 +15,9 @@ This project aims to explore and learn about the Kotlin language, exploring its 
 - Docker 
 - Kubernets
 - K3S
+- Spring Actuator
+- Prometheus
+- Grafana
 
 
 based on Kotlin Formation course at @Alura:

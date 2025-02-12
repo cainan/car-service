@@ -29,3 +29,16 @@ kubectl logs car-service-app-57c5d45599-8km9c
 
 kubectl get ingress
 kubectl get all
+kubectl delete pod car-service-app-7b598dc7b6-th7l2
+
+
+// Openshift
+oc login <token> <server>
+cd .\src\main\kotlin\br\com\car\k8s\
+oc apply -f .\mysql\
+oc apply -f .\redis\
+oc apply -f .\app\
+
+
+// Prometheus
+prometheus.exe --config.file="D:\git\2025\car-service\src\main\resources\prometheus.yaml"

@@ -40,6 +40,7 @@ internal class CarService(
 //    }
 
     override suspend fun listByInventory(model: String) = coroutineScope {
+        println("************************** LIST *********************************")
         carHttpService.getByModel(model)
             .let(CarHttpToModelConverter::toModel)
     }
